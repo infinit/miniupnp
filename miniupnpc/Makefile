@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 2014/06/10 09:51:33 nanard Exp $
+# $Id: Makefile,v 1.110 2014/09/06 08:24:12 nanard Exp $
 # MiniUPnP Project
 # http://miniupnp.free.fr/
 # http://miniupnp.tuxfamily.org/
@@ -78,7 +78,7 @@ OBJS = $(patsubst %.c,%.o,$(SRCS))
 HEADERS = miniupnpc.h miniwget.h upnpcommands.h igd_desc_parse.h \
           upnpreplyparse.h upnperrors.h miniupnpctypes.h \
           portlistingparse.h \
-          declspec.h
+          declspec.h bsdqueue.h
 
 # library names
 LIBRARY = libminiupnpc.a
@@ -178,6 +178,7 @@ clean:
 	# clean python stuff
 	$(RM) pythonmodule pythonmodule3
 	$(RM) validateminixml validateminiwget validateupnpreplyparse
+	$(RM) minihttptestserver minihttptestserver.o
 	$(RM) -r build/ dist/
 	#python setup.py clean
 	# clean jnaerator stuff
